@@ -60,7 +60,7 @@
 - 상주인구, 생활인구, 직장인구의 3개 인구 데이터에서 총 인구 수, 상권 별 평균 나이, 상권 별 나이의 합을 계산해 새로운 dataset을 3개 만들었다.
 - 각 dataset 별로 sum_age들을 합치고 총 인구 수로 나누는 방식으로 평균 연령을 계산했다.
 ###
-<img width="624" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/2d6af7ca-3331-4925-bdcf-55f2918c83d0">
+<img width="888" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/2d6af7ca-3331-4925-bdcf-55f2918c83d0">
 
 #
 - 점포 데이터에서 음식 관련 점포 수를 계산했다.
@@ -71,19 +71,25 @@
 - 점포 수 데이터와 아파트 단지 수 데이터를 추출한 결과는 다음과 같다.
 ###
 <img width="200" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/cdf7328e-92e3-4d2c-b5ad-6f72e4eadb90">
-<img width="200" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/7d724ef4-035c-4171-9fa5-c9519bb0425c">
+<img width="270" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/7d724ef4-035c-4171-9fa5-c9519bb0425c">
 
 #
 -> 위 dataset들을 하나로 합친 최종 dataset은 다음과 같다. 
 ###
 <img width="500" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/2d851564-36a1-4ddd-9635-e5aaf687c96f">
 
+###
+- dataset의 feature들마다 scale을 맞춰주기 위해 StandardScaler를 사용했다.
+###
+<img width="767" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/5a6e2e53-b6fe-4305-b108-13f26063dde4">
+
 ### 2) Clustering
 
 - Clustering model로 K-Means Clustering을 사용했다.
 - K값을 선택하기 위해 inertia와 Silhouette Score를 계산했다.
 ###
-<img width="600" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/7a3672c5-5071-4404-8773-884d9b1c876b">
+<img width="777" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/4bc87665-9b1a-4a61-8cd3-64d666f0bb46">
+
 
 - 위의 그래프에서 elbow method를 사용해 inertia가 꺾이는 K = 4를 선택했다.
 
@@ -93,7 +99,7 @@
 
 ###
 
-<img width="444" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/c05d1e4c-2cff-44b5-96d8-87b4833c9d67">
+<img width="512" alt="image" src="https://github.com/JTK01/DataMining/assets/99972138/c05d1e4c-2cff-44b5-96d8-87b4833c9d67">
 
 #
 
@@ -108,15 +114,19 @@
 ## 4. 결과
 ### 각 Cluster 별 Labeling 및 공원 형태 제시
 - Cluster 0 : 아파트 단지 수가 많은 Cluster
+  - ex: 지하철역 근처 상권
   - 잠깐 나와 조깅/산책할 수 있는 산책로
   - 아이들과 함께할 수 있는 공간
 - Cluster 1 : 평균 연령이 높은 Clsuter
+  - ex: 시장 상권
   - 계산이나 가파른 경사가 없는 공원
   - 편하게 쉴 수 있는 공간 조성
   - 어르신들이 사용할 수 있는 시설(ex: 핀란드 헬싱키의 어르신 놀이터)
 - Cluster 2 : 평균 연령이 낮은 Cluster
+  - ex: 학교 근처 상권
   - 아이들이 놀 수 있는 놀이기구 및 시설 마련
 - Cluster 3 : 식품 관련 점포 수가 많은 Cluster
+  - ex: 홍대, 신촌, 이태원 등
   - 음식을 먹을 수 있는 테이블 설치
   - 음식물 및 쓰레기 처리를 위한 시설 마련
 
